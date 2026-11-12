@@ -7,12 +7,18 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Visualizador de Métodos de Array</h1>
-    <p>Estado atual do Array</p>
+    <main class="card">
+      <h1>Visualizador de Métodos de Array</h1>
+      <p id="status-operacao">Estado atual do Array</p>
 
-    <div id="array-container" class="array-box"></div>
+      <div id="array-container" class="array-box"></div>
 
-    <button id="btn-map">Map</button>
+      <div class="controles">
+        <button id="btn-map">Map</button>
+        <button id="btn-filter">Filter</button>
+        <button id="btn-reset" hidden>Reset</button>
+      </div>
+    </main>
   </body>
   <script src="script.js"></script>
 </html>
