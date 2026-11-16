@@ -1,6 +1,7 @@
 const container = document.getElementById("array-container");
 const btn_map = document.getElementById("btn-map");
 const btn_filter = document.getElementById("btn-filter");
+const btn_find = document.getElementById("btn-find");
 const btn_reset = document.getElementById("btn-reset");
 const statusOperacao = document.getElementById("status-operacao")
 
@@ -23,6 +24,7 @@ const atualizarEstado = (lista, emModoOriginal, descricao = "numeros (original)"
    statusOperacao.textContent = descricao;
    btn_map.hidden = !emModoOriginal
    btn_filter.hidden = !emModoOriginal
+   btn_find.hidden = !emModoOriginal
    btn_reset.hidden = emModoOriginal
 }
 
@@ -33,6 +35,10 @@ btn_map.addEventListener("click", () => {
 btn_filter.addEventListener("click", () => {
     const maioresQueVinte = numeros.filter(numero => numero > 20);
     atualizarEstado(maioresQueVinte, false, "numeros.filter(numero => numero > 20");
+})
+btn_find.addEventListener("click", () => {
+    const encontrado = numeros.find(numero => numero > 25);
+    atualizarEstado([encontrado], false, "numeros.find(numero => numero > 25)")
 })
 btn_reset.addEventListener("click", () => {
     atualizarEstado(numeros, true)
